@@ -19,7 +19,7 @@ function getBotReply(message) {
   const text = message.toLowerCase();
 
   if (text.includes("contact") || text.includes("email") || text.includes("call") || text.includes("quote")) {
-    return "You can reach SmartEdgeIO at hello@smartedgeio.com. You can also jump to the contact section and share your project details.";
+    return "You can reach SmartEdgeIO at contact@smartedgeio.com. You can also jump to the contact section and share your project details.";
   }
 
   if (text.includes("iot") || text.includes("cloud") || text.includes("ota") || text.includes("device")) {
@@ -46,7 +46,7 @@ function getBotReply(message) {
     return "SmartEdgeIO offers embedded systems, IoT solutions, AI at the edge, Display and HMI, hardware design and end-to-end product engineering.";
   }
 
-  return "I can help with questions about SmartEdgeIO services, industries, embedded systems, IoT, AI at the edge, hardware design and product engineering. For a project discussion, contact hello@smartedgeio.com.";
+  return "I can help with questions about SmartEdgeIO services, industries, embedded systems, IoT, AI at the edge, hardware design and product engineering. For a project discussion, contact contact@smartedgeio.com.";
 }
 
 export default function ChatBot() {

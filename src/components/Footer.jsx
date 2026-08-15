@@ -17,7 +17,7 @@ export default function Footer() {
           </div>
           <div>
             <h3 className="font-bold">Contact</h3>
-            <p className="mt-4 text-sm leading-8 text-slate-400">hello@smartedgeio.com<br/>smartedgeio.com<br/>India</p>
+            <p className="mt-4 text-sm leading-8 text-slate-400">contact@smartedgeio.com<br/>smartedgeio.com<br/>India</p>
           </div>
         </div>
         <div className="mt-12 border-t border-white/10 pt-6 text-sm text-slate-500">
