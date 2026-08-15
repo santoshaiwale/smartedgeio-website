@@ -17,6 +17,11 @@ const initialMessages = [
 
 function getBotReply(message) {
   const text = message.toLowerCase();
+  const selectedPrompt = quickPrompts[Number(text) - 1];
+
+  if (selectedPrompt) {
+    return getBotReply(selectedPrompt);
+  }
 
   if (text.includes("contact") || text.includes("email") || text.includes("call") || text.includes("quote")) {
     return "You can reach SmartEdgeIO at contact@smartedgeio.com. You can also jump to the contact section and share your project details.";
@@ -122,15 +127,16 @@ export default function ChatBot() {
               </div>
             ))}
 
-            <div className="flex flex-wrap gap-2 pt-1">
-              {quickPrompts.map((prompt) => (
+            <div className="space-y-2 pt-1">
+              {quickPrompts.map((prompt, index) => (
                 <button
                   key={prompt}
                   type="button"
                   onClick={() => sendMessage(prompt)}
-                  className="rounded-full border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-600 transition hover:border-[#087ff5] hover:text-[#087ff5]"
+                  className="flex w-full items-center gap-3 rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-left text-xs font-semibold text-slate-600 transition hover:border-[#087ff5] hover:text-[#087ff5]"
                 >
-                  {prompt}
+                  <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#e5f3ff] text-[#087ff5]">{index + 1}</span>
+                  <span>{prompt}</span>
                 </button>
               ))}
             </div>
