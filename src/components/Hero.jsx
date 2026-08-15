@@ -1,5 +1,6 @@
 import { ArrowRight, BrainCircuit, Cpu, Rocket, ShieldCheck } from "lucide-react";
 import { motion } from "motion/react";
+import { assetPath } from "../utils/assetPath";
 
 const heroHighlights = [
   [Rocket, "End-to-End", "Product Development"],
@@ -11,7 +12,7 @@ const heroHighlights = [
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-[#020817] pb-12 pt-20">
-      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1800&q=85')" }} />
+      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${assetPath("images/hero-embedded.jpg")}')` }} />
       <div className="absolute inset-0 bg-gradient-to-r from-[#020817] via-[#020817]/88 to-[#020817]/20" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#020817]/95 via-transparent to-[#020817]/20" />
 
