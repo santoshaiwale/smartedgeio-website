@@ -1,5 +1,6 @@
 import { Menu, ArrowRight, X } from "lucide-react";
 import { useState } from "react";
+import { assetPath } from "../utils/assetPath";
 
 const links = ["Home", "Services", "Industries", "Technologies", "About Us", "Case Studies", "Blog"];
 
@@ -14,7 +15,7 @@ export default function Navbar() {
     <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-[#020817]/90 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-[1320px] items-center justify-between px-5 md:px-8">
         <a href="#" className="shrink-0">
-          <img src="/logo/smartedgeio-logo.png" alt="SmartEdgeIO Systems" className="h-12 w-auto md:h-14" />
+          <img src={assetPath("logo/smartedgeio-logo.png")} alt="SmartEdgeIO Systems" className="h-12 w-auto md:h-14" />
         </a>
 
         <nav className="hidden items-center gap-9 xl:flex">
