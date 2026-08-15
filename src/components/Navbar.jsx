@@ -8,20 +8,28 @@ function getHref(link) {
   return link === "Home" ? "#" : `#${link.toLowerCase().replaceAll(" ", "-")}`;
 }
 
-export default function Navbar() {
+function isActiveLink(link, currentPage) {
+  if (link === "Technologies") {
+    return currentPage === "technologies";
+  }
+
+  return link === "Home" && currentPage === "home";
+}
+
+export default function Navbar({ currentPage = "home" }) {
   const [open, setOpen] = useState(false);
 
   return (
     <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-[#020817]/90 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-[1320px] items-center justify-between px-5 md:px-8">
         <a href="#" className="shrink-0">
-          <img src={assetPath("logo/smartedgeio-logo.png")} alt="SmartEdgeIO Systems" className="h-12 w-auto md:h-14" />
+          <img src={assetPath("logo/SmartEdgeIO-Logo.svg")} alt="SmartEdgeIO Systems" className="h-12 w-auto md:h-14" />
         </a>
 
         <nav className="hidden items-center gap-9 xl:flex">
           {links.map((link) => (
             <a key={link} href={getHref(link)}
-              className={`border-b-2 py-7 text-sm font-semibold transition ${link === "Home" ? "border-[#1597ff] text-[#1597ff]" : "border-transparent text-white hover:text-[#1597ff]"}`}>
+              className={`border-b-2 py-7 text-sm font-semibold transition ${isActiveLink(link, currentPage) ? "border-[#1597ff] text-[#1597ff]" : "border-transparent text-white hover:text-[#1597ff]"}`}>
               {link}
             </a>
           ))}
@@ -43,7 +51,7 @@ export default function Navbar() {
           {links.map((link) => (
             <a key={link} onClick={() => setOpen(false)}
               href={getHref(link)}
-              className="block border-b border-white/5 py-3 text-slate-200">
+              className={`block border-b border-white/5 py-3 ${isActiveLink(link, currentPage) ? "text-[#1597ff]" : "text-slate-200"}`}>
               {link}
             </a>
           ))}
