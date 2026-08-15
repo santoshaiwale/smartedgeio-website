@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="mx-auto max-w-[1350px]">
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
-            <img src={assetPath("logo/SmartEdgeIO-Logo.png")} alt="SmartEdgeIO Systems" className="h-14 w-auto" />
+            <img src={assetPath("logo/SmartEdgeIO-Logo.svg")} alt="SmartEdgeIO Systems" className="h-14 w-auto" />
             <p className="mt-5 max-w-lg leading-7 text-slate-400">
               Embedded product engineering across hardware, firmware, AI, IoT and display systems.
             </p>
