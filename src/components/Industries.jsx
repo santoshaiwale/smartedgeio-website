@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpDown, Building2, Factory, HeartPulse, Radio, Zap } from "lucide-react";
+import { ArrowRight, ArrowUpDown, Building2, Car, Factory, HeartPulse, Radio, Zap } from "lucide-react";
 
 const industries = [
   [Factory, "Industrial Automation"],
@@ -6,6 +6,7 @@ const industries = [
   [ArrowUpDown, "Elevator Systems"],
   [Building2, "Building Automation"],
   [Zap, "Energy & Utilities"],
+  [Car, "Automotive EV"],
   [Radio, "Smart IoT Devices"]
 ];
 
@@ -21,7 +22,7 @@ export default function Industries() {
           </a>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7">
           {industries.map(([Icon, name], index) => (
             <div key={name} className={`flex min-h-40 flex-col items-center justify-center px-5 py-7 text-center ${index > 0 ? "border-t border-white/10 sm:border-l sm:border-t-0" : ""}`}>
               <Icon size={42} strokeWidth={1.55} className="text-white" />
