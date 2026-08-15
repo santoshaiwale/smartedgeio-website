@@ -12,7 +12,7 @@ const heroHighlights = [
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-[#020817] pb-12 pt-20">
-      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${assetPath("images/hero-embedded.jpg")}')` }} />
+      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${assetPath("images/hero-embedded.png")}')` }} />
       <div className="absolute inset-0 bg-gradient-to-r from-[#020817] via-[#020817]/88 to-[#020817]/20" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#020817]/95 via-transparent to-[#020817]/20" />
 
